@@ -1,4 +1,4 @@
-package org.osdg.examples;
+package org.osdg.fata.examples;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
