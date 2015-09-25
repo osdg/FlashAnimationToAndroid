@@ -184,14 +184,17 @@ public class FlashAnimationView extends SurfaceView {
 
         Canvas canvas = getHolder().lockCanvas();
 
-        canvas.save();
-        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-        frames.get(currentFrameIndex).drawOnCanvas(bitmap, canvas);
+        if (canvas!=null) {
 
-        currentFrameIndex++;
-        canvas.restore();
+            canvas.save();
+            canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+            frames.get(currentFrameIndex).drawOnCanvas(bitmap, canvas);
 
-        getHolder().unlockCanvasAndPost(canvas);
+            currentFrameIndex++;
+            canvas.restore();
+
+            getHolder().unlockCanvasAndPost(canvas);
+        }
     }
 
     public boolean isPlaying() {
